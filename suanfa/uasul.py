@@ -60,10 +60,39 @@ def quick_sort(data):
 
     return quick_sort(small) + equal + quick_sort(big)
 
+
+def binary_search():
+    a = [1, 2, 3, 4, 5]
+    print 'Seach list a: %s' % a
+    print 'Seach 4'
+    searched = 4
+    mid = len(a)//2
+    begin = 0
+    end = len(a)-1
+    while begin < end:
+        #print 'begin %s : end %s : mid %s' % (begin, end, mid)
+        if a[mid] == searched:
+            print "index: %s" % mid
+            return mid
+        elif a[mid] > searched:
+            end = mid - 1
+            mid = (begin+end)//2
+        elif a[mid] < searched:
+            begin = mid + 1
+            mid = (begin+end)//2
+        else:
+            print "WOW"
+    else:
+        print 'No found'
+        
+
 if __name__ == '__main__':
+    """
     data = getdata()
     bubble_sort(data)
     data = getdata()
     selection_sort(data)
     data = getdata()
     print 'Quick sorted: %s' % quick_sort(data)
+    """
+    binary_search()
