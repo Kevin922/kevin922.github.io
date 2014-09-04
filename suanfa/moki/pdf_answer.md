@@ -1,6 +1,8 @@
 > 这是PDF答案，链接的答案稍后，
 > 本来昨天就想用邮件直接发的，觉得还是有点乱，还是用md稍微整理格式。
 
+> *p.s: 上面放的东西少，这个github我会慢慢维护起来。*
+
 ### 1. 问答题
 #### a. 
 
@@ -112,4 +114,4 @@ class simple_balance(object):
 
 https://github.com/Kevin922/kevin922.github.io/blob/master/suanfa/change_str_to_ip.py
 
-p.s: 上面放的东西少，这个github我会慢慢维护起来。
+
