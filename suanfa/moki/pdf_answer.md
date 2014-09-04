@@ -112,6 +112,6 @@ class simple_balance(object):
 
 ### 3. 编程题：
 
-https://github.com/Kevin922/kevin922.github.io/blob/master/suanfa/change_str_to_ip.py
+你好，我是[答案链接](https://github.com/Kevin922/kevin922.github.io/blob/master/suanfa/moki/change_str_to_ip.py)
 
 
