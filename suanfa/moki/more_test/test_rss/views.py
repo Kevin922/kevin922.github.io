@@ -47,6 +47,7 @@ def index(request):
        
     content = '''
     <pre>
+    id = %s
     artist = %s
     artistLink = %s
     album = %s
@@ -62,7 +63,7 @@ def index(request):
     all_item = RssContent.objects.all()
     out_html = []
     for l in all_item:
-        ret = content % (l.artist, l.artistLink, l.album, l.albumLink,
+        ret = content % (l.id, l.artist, l.artistLink, l.album, l.albumLink,
                 l.albumPrice, l.genre, l.coverArt, l.releasedate)
         out_html.append(ret)
 
