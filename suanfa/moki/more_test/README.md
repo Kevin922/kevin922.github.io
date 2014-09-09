@@ -5,22 +5,23 @@ python 2.7.5
 
 
 ### 开发计划
-基本功能
+#### 基本功能
 
 > 1. 2个问题，都有注释 #! 标示出来了，是代码设计上的问题
 
 > 遇到的问题：
-> 1. sqlite操作与mysql略微不同，稍微花了点时间，看了一下
+> - sqlite操作与mysql略微不同，稍微花了点时间，看了一下
 
-> 2. django 1.7, 还是与1.3 和 之前的1.6 有不同：
+> - django 1.7, 还是与1.3 和 之前的1.6 有不同：
 
-> 2.2 `python manage.py makemigrations test_rss`
+> 1. `python manage.py makemigrations test_rss`
 
-> 2.3 `python manage.py sqlmigrate`
+> 2. `python manage.py sqlmigrate`
 
 > django 1.7，好像是实现了，修改表结构的功能了，但是功能开始不强，字段名还是不能随之调整, 还是drop table 搞定了
 
-改进点：
+#### 改进点：
+
 2. 分页操作，我暂时实现了一个共通方法的链接，并没有加入到模板上
 > 分页就是limit操作，django中的 切片操作
 
