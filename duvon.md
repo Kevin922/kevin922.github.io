@@ -311,3 +311,62 @@ if __name__ == '__main__':
 
 
 ### Q23
+A: this one I metioned in *private var questtion*.
+
+`__<foo>__` that is python special method, python keep them, like:
+
+- `__file__`, your file name and path
+- `__init__`
+- `__getattr__`, getattr()
+- `__getitem__`, setattr()
+- `__add__`, this is really cool, it implement `+`, in C++ is more complex.
+- some thing else, all in doc, if I am not sure I will check doc
+
+
+### Q24
+A: wow, I always use 3 way.
+
+- `logging` or print. use `tail -f logging.file | grep "yanwenyuan"`
+```python
+""" I use this func in my project """
+import logging
+
+def print_debug(e, debug_flag):
+    if debug_flag:
+        logging.error('yanwenyuan %s ', e)
+```
+
+- pudb, cause I use vim, pudb is really helpful
+``` python
+if __main__ == '__main__':
+    import pudb; pu.db
+    print 'hello'
+```
+
+- Just directly read the django or other framework's error page
+
+- sentry, is online report, not debugging tool, but useful.
+
+
+### Q25
+A: 3 ways
+
+- `join`
+- `+`
+- memoryview
+
+
+### Q26
+A: Maybe you should use `dir()` to get the object's attrs, it read `__dict__`
+
+`__name__` will tell you the object's module name
+
+
+### Q27
+A: Good, No "?:", for now, but have anohter way: `true_out if True else false_out`
+
+
+### Q28
+A: WOW, I do not know. All I know is that add an element in dict `sys.module`, see my [old code](https://github.com/Kevin922/kevin922.github.io/blob/master/blog/dynamis_changing_import.py)
+
+I want to do some werid thing before...
