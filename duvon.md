@@ -1,4 +1,8 @@
-> Do not worry, not one will notice this doc, I will del it later.
+> Hi, Do not worry, not one will notice this doc, I will del it later.
+> and I just finished your questions, many good questions in python.
+> some of them I do not know, just have a thinking.
+> Have a nice day.
+> ---- k9
 
 ### Q1
 A: `try... except... else... finally...`
