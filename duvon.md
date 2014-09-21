@@ -374,3 +374,10 @@ A: Good, No "?:", for now, but have anohter way: `true_out if True else false_ou
 A: WOW, I do not know. All I know is that add an element in dict `sys.module`, see my [old code](https://github.com/Kevin922/kevin922.github.io/blob/master/blog/dynamis_changing_import.py)
 
 I want to do some werid thing before...
+
+AND:
+``` python
+>>> a = __import__('doctest')
+>>> type(a)
+```
+I think this is the answer.
