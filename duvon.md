@@ -102,3 +102,212 @@ class Private_show(object):
         
         self.__hello = 'Hi, I am private use __'
 ```
+
+### Q11
+A: 
+```python
+""" You often use: """
+
+# 1
+a = xrange(0, 10)  # 1. save memory, xrange is generator
+
+
+# 2
+with open('a.file', 'rb') as f:
+    for l in f:     # f is generator
+        print l
+
+
+# 3        
+t = (i for i in range(0, 10))    # guess t is what?
+tt = [i for i in range(0, 10)]   # so tt is what??  Have a try ~
+type(t)
+type(tt)
+
+
+# 4
+def out(a):
+    while a < 10:
+        yield a
+        a = a + 1
+
+for i in out(0):
+    print i
+```
+
+### Q12
+A: A sweet candy. Code show you how and why.
+
+``` python
+class A(object):
+    """ the same staticmethod """
+    
+    def static1():
+        pass
+    
+    static1 = staticmethod(static1) # this make static1 a static method, I think it's ok. But...
+    
+    @staticmethod
+    def static2():
+        """ Same, just candy: static2 = staticmethod(static2) """
+        pass
+```
+
+with arguments:
+``` python
+
+@d('hello')
+def f(): pass
+
+# is same as
+
+f1 = d('hello')  # 1. d reture a func which receive a fucn as argument
+f = f1(f)        # 2. do some thing
+```
+
+### Q13
+A: `class FOO` is the old OOP in python, we suggest you to use `class FOO(object)`, all object have the same base `object`.
+
+
+### Q14
+A: I guess python do not have `++i` or `--i`.
+
+I always use `a = a + 1`, even not use `a += 1`, I think the former is a little bit more explict... Maybe it is just my thinking.
+
+
+### Q15
+A: 
+
+``` python
+""" __init__ does the same, if you have to use base's method, use super() """
+class father(object):
+    def hello(self):
+        print 'hello, I am father.'
+
+class child(father):
+    def hello(self):
+        print 'hello, I am child.'
+```
+
+
+### Q16
+A: Good question, let me show you some my old code
+
+``` python
+
+# 1. eval do a expression, 
+cmd = '''ADIPrize%s(user_id=data['user_id'], $
+                    name=data['name'], $
+                    phone=data['phone'],$
+                    nick=data['nick'])''' % data['km']$
+    ]                                
+top_user = eval(cmd)$            
+top_user.save()
+
+
+# exec do a code, like
+exec "a = 1"
+"""
+```
+
+
+### Q17
+A: ok, show you my old code
+
+``` python
+#coding=utf8
+
+def mom_data(request, device, sport, func, hope=HOPE_TYPE['LENGTH']):
+    """
+    @para: for mom,
+    1. @request, just get mom data
+    2. @device, ((0, u'追踪器'), (1, u'健康秤'), (2, u'咕咚 maybe android'),
+                (3, u'咕咚 maybe ios'), (4, u'码表'))
+    3. @sport,  ((0, u'走路'), (1, u'跑步'), (2, u'骑行'),
+                (3, u'滑雪'), (4, u'滑冰'), (5, u'登山'))
+    4. @func, which is a func, add user sports data
+    5. hope, which one do u want? `total_length` OR `total_calories`?
+
+    @return: True, 'init' OR False, 'init'
+    """
+    import json
+    import datetime
+    from www.product.interface import get_product_type
+
+    assert(isinstance(device, (tuple, list)))
+    assert(isinstance(sport, (tuple, list)))
+"""
+```
+
+### Q18
+A: 
+
+``` python 
+class A(object):
+    a = 1
+
+if __name__ == '__main__':
+    """ You can write test code in main """
+    
+    a = A()
+    a_attr = getattr(a, 'a')
+    print a_attr
+    
+    setattr(a, 'a', 2)
+    a_attr = getattr(a, 'a')
+    print a_attr
+```
+
+### Q19
+A: Yes, just use one class to get\set the data. I never implement a singleton before.
+
+I guess the simple example is *settings.py*, all process get info from the only one file.
+
+I will finish one later, as one commit, you will see.
+
+```python
+pass
+```
+
+### Q20
+A: 
+
+- `range` will product a list, all element is stored in memory.
+
+- `xrange` will product a iter, just when you want to get, the iter returen one element, less memory used.
+
+
+### Q21
+A: Last year 2013, I read [this](http://www.ibm.com/developerworks/cn/linux/l-cn-python-optim/index.html?ca=dat-).
+
+Those below is what I ofen use, hope is useful for you.
+
+- Chose right data structure. Use `dict` to get what you want, not using find `list` by`for-in` to get.
+- Use `join` not `+` to connect string, this alse metioned in <python cookbook>.
+- `list comprehension` is faster than `for, append()`.
+- built-in func is more faster, cause it is implemented by C module.
+- use `xrange()`
+
+
+### Q22
+A: I just read and used `doctest`, that is really simple.
+Cause I read some source code of *web.py*, which use `doctest`, the great author.
+
+``` python
+# file my_test.py
+def test(x): 
+    '''''
+    >>> test(2)
+    4
+    >>> test(3)
+    9
+    ''' 
+    return x*x 
+     
+if __name__ == '__main__': 
+    import doctest, my_test 
+    doctest.testmod(my_test)
+```
+
+
+### Q23
