@@ -225,10 +225,10 @@ def mom_data(request, device, sport, func, hope=HOPE_TYPE['LENGTH']):
     """
     @para: for mom,
     1. @request, just get mom data
-    2. @device, ((0, u'追踪器'), (1, u'健康秤'), (2, u'咕咚 maybe android'),
-                (3, u'咕咚 maybe ios'), (4, u'码表'))
-    3. @sport,  ((0, u'走路'), (1, u'跑步'), (2, u'骑行'),
-                (3, u'滑雪'), (4, u'滑冰'), (5, u'登山'))
+    2. @device, ((0, u'tracker'), (1, u'scale'), (2, u'android'),
+                (3, u'ios'), (4, u'ride'))
+    3. @sport,  ((0, u'walker'), (1, u'run'), (2, u'ride'),
+                (3, u'skiing'), (4, u'skate'), (5, u'climbing'))
     4. @func, which is a func, add user sports data
     5. hope, which one do u want? `total_length` OR `total_calories`?
 
