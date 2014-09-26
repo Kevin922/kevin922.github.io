@@ -269,9 +269,6 @@ I guess the simple example is *settings.py*, all process get info from the only 
 
 I will finish one later, as one commit, you will see.
 
-```python
-pass
-```
 
 ### Q20
 A: 
