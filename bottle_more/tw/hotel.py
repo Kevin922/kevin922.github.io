@@ -8,6 +8,7 @@ class HotelException(Exception):
     pass
 
 
+
 class UserInputDateError(HotelException):
     """ 用户输入 日期错误异常 """
     pass
@@ -19,9 +20,9 @@ class UserInputDateError(HotelException):
 class Hotel(object):
     """ Hotel的操作 """
 
-    def __init__(self, location='', name='', rate=3, 
+    def __init__(self, location='', name='', rate=3,
             weekday_fee={'Regular': 220, 'Rewards': 150},
-            weekend_fee={'Regular': 150, 'Rewards': 100}, 
+            weekend_fee={'Regular': 150, 'Rewards': 100},
             user_input=None):
 
         """
@@ -63,7 +64,7 @@ class Hotel(object):
 
     def user_ask(self, user_input=None):
         """ 用户询问价格 且 设置用户输入user_input
-        user_input: {'user_type': 'Regular', 'weekday_count': 9, 'weekend_count': 2} 
+        user_input: {'user_type': 'Regular', 'weekday_count': 9, 'weekend_count': 2}
         """
         if user_input is not None:
             self.user_input = user_input
@@ -106,7 +107,7 @@ class User(object):
     """ 用户类 - 提供用户希望的操作 - 工具类"""
 
     def __init__(self, user_input):
-        """ 
+        """
         >>> user1 = User('Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)')
         >>> user1.user_input
         {'weekday_count': 3, 'user_type': 'Regular', 'weekend_count': 0}
@@ -167,7 +168,7 @@ class User(object):
             from collections import Counter
             # 1. 获取用户类型
             user_input = user_input.split(':')
-            user_type = user_input[0] 
+            user_type = user_input[0]
             # 2. 计算总共的计数
             pattern = re.compile(r'\((?P<week>\w*)\)')
             match = pattern.findall(user_input[1]) # 正则捕获: ['mon', 'tues', 'wed']
@@ -188,7 +189,7 @@ class User(object):
 
 
     def compare(self, hotel_list):
-        """ 用户行为， 比较价格 
+        """ 用户行为， 比较价格
 
         你可能会奇怪我为什么要`user_ask`, 设置酒店的用户输入
         原因:
