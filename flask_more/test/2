@@ -1,0 +1,11 @@
+#coding=utf8
+
+G = 9
+
+def test():
+    l = 22
+    print locals()
+
+if __name__ == "__main__":
+    print globals()
+    test()
