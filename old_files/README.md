@@ -1,3 +1,0 @@
-1. Suanfa is an Algorithms dir
-2. In blog, most of them is doc translated from python offical doc.
-3. Some fun to be continue...
