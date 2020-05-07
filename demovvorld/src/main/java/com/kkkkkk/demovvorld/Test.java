@@ -1,10 +1,5 @@
 package com.kkkkkk.demovvorld;
 
-import com.alibaba.fastjson.JSON;
-
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.LinkedList;
 
 public class Test {
     public static void main(String[] args) {
@@ -12,7 +7,6 @@ public class Test {
         while (i > 0) {
             i++;
         }
-        Integer.MAX_VALUE
         System.out.println(Math.abs(i + 2020));
 
 //        Deque<String> deque = new LinkedList<>();

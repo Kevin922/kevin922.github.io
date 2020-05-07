@@ -1,8 +1,6 @@
 package com.kkkkkk.demovvorld;
 
-import com.alibaba.fastjson.JSON;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,7 +22,7 @@ public class Test1 {
         // process
 
         // drill down
-        test(i+1, max);
+        test(i + 1, max);
 
 
         // reverse state
