@@ -62,3 +62,50 @@ https://pdos.csail.mit.edu/6.824/schedule.html
 3. 猜想【若各位大佬知晓确切答案，请评论】：
 
    1. 你仅仅只是继承了`GenericHttpMessageConverter`类来改写request的返回值。spring怎么知道你定了这些处理方法呢？可能是spring启动时候，会检查所有继承 和 实现过接口`HttpMessageConverter`的类。然后spring会用职责链和代理模式逐个调用这些自定义处理request的类。
+
+
+
+## @Async
+
+## spring框架下，aop执行的先后顺序
+
+1. [@Order注解](https://www.baeldung.com/spring-order)
+2. [Ordered接口](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/Ordered.html)
+3. 编程方式
+
+```java
+/**
+I guess `@EnableTransactionManagement(order = Ordered.HIGHEST_PRECEDENCE)` is the global config.
+
+
+If you want `@Transactional` just on this method `A()`, not for other methods, maybe you can define method `B()` to call `A()`. This way will point out the order of annotations.
+
+
+Like this:
+
+
+I think this is not a smart solution. 
+If you have a good idea, please let me know.
+**/
+
+@Service
+class TestB {
+    @Autowired
+    private TestA testA;
+
+     
+    @Transactional
+    public void b() {
+        // !! notice: you should call bean testA that will use spring's AOP
+        testA.a();
+    }
+}
+
+@Service
+class TestA {
+    @Custom
+    public void a() {}
+}
+ 
+```
+
